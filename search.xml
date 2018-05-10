@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[hexo博客使用系列（六）——将博客部署到codingpages]]></title>
+      <url>%2F2017%2F02%2F05%2Fhexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E5%85%AD%EF%BC%89%E2%80%94%E2%80%94%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0codingpages%2F</url>
+      <content type="text"><![CDATA[step 1注册coding账户。进入自己的账户–&gt;项目，如下图操作，创建项目。 step 2在Coding的个人主页的账户中，进入SSH公钥。添加你的公钥，如果你之前生成过，公钥在C:\Users\你的用户名.ssh\id_rsa.pub。复制里面的内容在SSH-RSA公钥内容中即可。如下图操作。在网站根目录下打开git bash here，输入 1ssh -T git@git.coding.net 进行测试，如果显示如下则SSH配置成功： 1Hello ...! You&apos;ve conected to Coding.net by SSH successfully! step3修改网站根目录下的配置文件_config.yml，找到deploy的设置处，改为如下： deploy: type: git repo: github: https://github.com/Javaclear/Javaclear.github.io.git coding: https://git.coding.net/yanhuangshi/yanhuangshi.git branch: master #注意要改成你的项目地址。 step4在git bash here窗口输入下列代码： hexo g -d step5进入自己的项目，选择pages服务，开启服务。如下图操作。 至此，成功部署到coding上，再也不用担心GitHub被墙导致网站无法访问的问题。该方法和将博客直接部署到码云page有异曲同工之妙。 本文参考：http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hexo博客使用系列（五）——NexT主题个性化设置]]></title>
+      <url>%2F2017%2F02%2F05%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E4%BA%94%EF%BC%89%E2%80%94%E2%80%94NexT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE%2F</url>
+      <content type="text"><![CDATA[提前说明： 假设网站的根目录为D:/Hexo/，也称为 站点目录站点配置文件 是指网站目录下的_config.yml文件，即D:/Hexo/_config.yml主题配置文件 是指网站目录下对应的主题文件夹下的_config.yml文件，即D:/Hexo/themes/next/_config.yml.下面的功能设置完成后，记得1hexo g -d 以完成网站的生成与部署。————————————————————————————————————————— 添加分类、标签云、关于等页面以添加分类页面为例，在站点目录下，打开git bash，输入1hexo new page "categories" 之后在站点目录下的source文件夹下，会新增一个categories的文件夹，里面有一个index.md文件，打开如下：12345title: categoriesdate: 2015-12-04 15:37:22type: "categories"comments: false--- 其中，comments可以设置为false，含义是打开分类页面，评论插件不显示；如要显示则改为true。 tags, about页面的创建类似，输入12hexo new page "tags"hexo new page "about" 添加站内搜索功能NexT支持Swiftype插件以实现站内搜索功能。Step 1: 注册SwiftypeStep 2: 创建一个新的搜索引擎 (点击 Create an engine，按要求创建即可)Step 3: 点击新建的搜索引擎，按如下点击 INSTALL SEARCH然后复制下面蓝色底的字串Step 4: 编辑站点配置文件，添加如下内容12# Swiftype Search Keyswiftype_key: xxxxxxxxx(粘贴以上复制的内容) 设置右侧栏头像编辑站点配置文件，添加如下内容：1avatar: your avatar url 其中，your avatar url 可以是(1) 完整的互联网URL，你可以先将设置的头像图片放到图床上；(2) 本地地址：如 /upload/image/avatar.png (你需要将 avatar.png 文件放在/站点目录/source/upload/image/ 里面)。 设置favicon图标Step 1:首先要有一个常见格式名(如.jpg, .png等)的图片作为备选favicon，选择一个favicon制作网站完成制作，例如比特虫是一个免费的在线制作ico图标网站。Step 2:将==favicon.ico==文件放在网站根目录下的source文件夹内即可。刷新网站，就可以看到效果了。 添加社交链接编辑站点配置文件，添加：1234567social: github: https://github.com/your-user-name twitter: https://twitter.com/your-user-name weibo: http://weibo.com/your-user-name douban: http://douban.com/people/your-user-name zhihu: http://www.zhihu.com/people/your-user-name # 等等 可根据自身需要自行删减。 添加友情链接以添加github官网 为友情链接为例编辑站点配置文件，添加如下内容12345# titlelinks_title: Links# linkslinks: Github: https://www.github.io 其中，links_title为友情链接名称。 添加评论区支持Disqus和多说两种评论样式。建议中文网站选择多说，英文网站选择Disqus。下面以Disqus为例说明。Step 1: 注册DisqusStep 2: 登陆后进入到Settings，点击Add Disqus To Site，然后点击页面的右上角的Install on Your SiteStep 3: 复制你的shortnameStep 4: 编辑站点配置文件，添加1disqus_shortname: your disqus shortname 这样你的所有文章及页面下面，会自动加载Disqus的评论插件。如果在分类、标签云等页面，不想显示评论区，可以打开这个page文件夹下的md文件，添加1comments: false 首页文章以摘要形式显示最简单的方式是：打开主题配置文件，找到如下位置，修改123auto_excerpt: enable: true length: 150 其中length代表显示摘要的截取字符长度。 设置首页文章显示篇数Step 1: 安装相关插件输入如下命令123npm install --save hexo-generator-indexnpm install --save hexo-generator-archivenpm install --save hexo-generator-tag Step 2:安装完插件后，在站点配置文件中，添加如下内容12345678910index_generator: per_page: 5archive_generator: per_page: 20 yearly: true monthly: truetag_generator: per_page: 10 其中per_page字段是你希望设定的显示篇数。index, archive及tag开头分表代表主页，归档页面和标签页面。 设置404公益页面在站点目录的source文件夹下，新建404.html文件，将下面的代码复制进去保存即可。1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;title&gt;404 - arao'blog&lt;/title&gt; &lt;meta name="description" content="404错误，页面不存在！"&gt; &lt;meta http-equiv="content-type" content="text/html;charset=utf-8;"/&gt; &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt; &lt;meta name="robots" content="all" /&gt; &lt;meta name="robots" content="index,follow"/&gt;&lt;/head&gt;&lt;body&gt; &lt;script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone_v6/lostchild/search_children.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt; 显示效果如下 本文转载自：http://www.jeyzhang.com/next-theme-personal-settings.html]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hexo博客使用系列（四）——文章里嵌入音乐播放器]]></title>
+      <url>%2F2017%2F02%2F04%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94%E6%96%87%E7%AB%A0%E9%87%8C%E5%B5%8C%E5%85%A5%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%2F</url>
+      <content type="text"><![CDATA[内嵌播放器打开网页版网易云音乐。选择自己喜欢的音乐或歌单，点开歌曲名货歌单名，点击生成外链播放器，复制html代码，将html代码无需任何修改放入markdown文章里就可以了。可以取消自动播放。效果如下：]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hexo博客使用系列（三）——更换博客主题]]></title>
+      <url>%2F2017%2F02%2F04%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%2F</url>
+      <content type="text"><![CDATA[==获取主题==1、选择自己喜欢的主题进入Hexo官网 https://hexo.io/themes/ 选择： 2、点击主题名进行下载 3、将下载好的主题解压到 D:\Blog\themes 。==配置主题==1、打开 D:\Blog_config.yml ,修改theme 为刚刚解压的主题文件夹名称。==注意：theme: 后有一个英文空格。==2、在\Blog下运行Git Bash Here命令窗口，执行下面代码：12hexo generatehexo deploy OK！主题更换成功啦！赶紧进入自己的网站看看效果吧。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hexo博客使用系列（二）——常用命令]]></title>
+      <url>%2F2017%2F02%2F04%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+      <content type="text"><![CDATA[==注意：== 以下指令理论上可以在电脑自带cmd窗口执行，但可能会出错，最好在 Git Bash Here 窗口执行。使用过程中遇到任何问题欢迎留言和我交流。当然，个人建议大家有问题先上网查找答案，一般可以找到。 一、新建一个网站1$ hexo init [folder] ==folder==指你新建网站在你电脑上存放的文件夹，默认在目前的文件夹建立网站。 二、新建一篇文章1$ hexo new [layout] &lt;title&gt; layout：布局，可以不设置，默认使用 _config.yml 中的 ==defaultlayout==参数代替。注意：如果标题包含空格，请用引号括起来。 ==新建的文章存放在你的网站文件夹根目录下的/source/posts里面。== 三、生成静态文件1$ hexo generate #可以简写为 hexo g 四、启动服务1$ hexo server 启动服务器后，默认访问 ==http://localhost:4000/== 进行网站预览。==可通过 hexo new port 重设端口，将:4000改为其他值，如5885等。== 五、部署网站1$ hexo deploy #可简写为 hexo d ;也可以与 generate连用，合写为 hexo g -d 六、其他指令1、渲染文件1$ hexo render &lt;file1&gt; [file2] ... 2、从其他博客系统迁移内容1$ hexo migrate &lt;type&gt; 参考：hexo迁移内容 3、清除缓存文件 (db.json) 和已生成的静态文件 (public)1$ hexo clean 4、列出网站资料1$ hexo list &lt;type&gt; 5、显示 Hexo 版本1$ hexo version 七、选项1、安全模式1$ hexo --safe 安装新插件遇到问题时，可尝试以安全模式重新执行。 2、调试模式1$ hexo --debug 3、简洁模式1$ hexo silent 隐藏终端信息。 4、自定义配置文件路径1$ hexo --config custom.yml #执行后将不再使用 _config.yml 5、显示 source/_drafts 文件夹中的草稿文章1$ hexo --draft 6、自定义当前工作目录（Current working directory，CWD）的路径1$ hexo --cwd /path/to/cwd ==**本文主要参考hexo命令==]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hexo博客使用系列（一）——新建文章并发布]]></title>
+      <url>%2F2017%2F01%2F25%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E5%B9%B6%E5%8F%91%E5%B8%83%2F</url>
+      <content type="text"><![CDATA[* 新建文章的方法1、进入你的博客目录，在 /source/_posts 文件夹下直接建立一个.md文件。 2、进入你的博客目录，右键选择 Git Bash Here 进入命令窗口，输入下面代码:1hexo new "新建文章名称" #新建文章 此时，在方法1所述的文件夹里便有了 新建文章名称.md 文件。 * 发布新建文章在该博客项目文件夹下运行 Git Bash Here 命令窗口，依次输入如下代码：12hexo generate #生成更改hexo deploy #将生成的更改部署到码云或者GitHub上 ==注意== 1、部署到GitHub时，可能因为网速、被墙等原因，需要多次运行 hexo deploy ；有时候可以运行 hexo clean 后在运行上述代码。2、.md文件不要用记事本打开，建议使用具有markdown语法的程序打开，比如：subline text、notepad++等。也可以使用在线markdown编辑器，比如：==小书匠== 其他问题欢迎在评论区留言！]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hexo博客使用教程（引子）————如何优化]]></title>
+      <url>%2F2017%2F01%2F25%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E5%BC%95%E5%AD%90%EF%BC%89%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%2F</url>
+      <content type="text"><![CDATA[==**优化文章==1、使用markdown编辑器编写文章时，使用markdown语法优化。自行百度markdown语法。2、修改网站根目录下scaffolds（模版）的文件，可编辑选项：layout（布局），title（标题），date（文件建立日期）。 ==**优化主题====*== 网站增加插件1、增加访问量统计2、增加站内搜索3、增加打赏功能4、添加返回顶部功能 ==*== 局部缓存如果您的主题太过于复杂，或是需要生成的文件量太过于庞大，可能会大幅降低性能，除了简化主题外，您可以考虑 Hexo 2.7 新增的局部缓存（Fragment Caching） 功能。 本功能借鉴于 Ruby on Rails，它储存局部内容，下次便能直接使用缓存内容，可以减少文件夹查询并使生成速度更快。 它可用于页首、页脚、侧边栏等文件不常变动的位置，举例来说：123&lt;%- fragment_cache('header', function()&#123; return '&lt;header&gt;&lt;/header&gt;';&#125;); 如果您使用局部模板的话，可以更简单：1&lt;%- partial('header', &#123;&#125;, &#123;cache: true&#125;); 但是，如果您开启了 relative_link 参数的话，请勿使用局部缓存功能，因为相对链接在每个页面可能不同。 具体优化教程随后奉上！]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[搭建个人免费博客：利用Hexo在码云上部署博客]]></title>
+      <url>%2F2017%2F01%2F25%2F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%88%A9%E7%94%A8Hexo%E5%9C%A8%E7%A0%81%E4%BA%91%E4%B8%8A%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%2F</url>
+      <content type="text"><![CDATA[写在前面为什么要搭建专属博客？每个人有每个人想法。很显然，反正你看到了这篇文章就说明你有一些想法。 不多赘述，开始搭建。 注意：本篇针对win7 x64 工具介绍大家想了解工具的，看官方文档。 码云pages，参考 https://git.oschina.net/ Hexo：https://hexo.io/zh-cn/ 准备工作1、安装node.js参考 http://www.runoob.com/nodejs/nodejs-install-setup.html 2、安装Git参考 http://www.runoob.com/git/git-install-setup.html 3、安装Hexo安装好node.js、git后，打开cmd窗口（开始—-&gt;搜索框输入“cmd”，回车），输入下面代码：1npm install -g hexo-cli 安装完成后输入1hexo 显示如下图，则安装成功！关于Hexo的更多使用，参考官方文档：https://hexo.io/zh-cn/docs/ 正式搭建博客1、本地运行Hexo在你喜欢的硬盘下建一个项目文件夹（名称随你喜欢，Blog、Hexo等等都可以），在该文件夹下，按鼠标右键出现如下图，选择Git Bash Here，进入如下窗口：在窗口中输入：1npm install 再输入：1hexo generate 然后在该文件夹下一般会出现如下文件：有的电脑上项目文件夹下没有 .deploy_git、public和db，没事。到了这里，你已经建好了一个博客，不过现在只能在本地运行。本地运行预览方法如下（以后都可以通过以下代码预览）：12npm installhexo server 在浏览器中输入 http://localhost:4000 就可以看到刚刚搭建好的博客了。如图： 2、将搭建好的博客部署到码云pages 首先在 https://git.oschina.net/ 上注册一个账号。登陆后，点击页面右上角加号，选新建项目，填写如下信息，创建。如下图：创建完成后，得到项目的HTTPS，复制。在原先打开的git bash here 窗口依次输入如下代码：12hexo generatenpm install hexo-deployer-git --save 然后打开项目根目录下的_config.yml 文件，修改最后的deploy属性，修改后如下注意：repo的值是之前复制的码云项目上的HTTPS。修改完，在git bash here 窗口输入下面代码：12hexo generatehexo deploy 然后会弹出一个对话框，输入你的码云账号密码，账号最好填写你注册时用到的邮箱。到此，部署完成。进入码云你创建的项目，看是否已经有类似下面的文件，如果有，那么恭喜你部署成功啦！然后，启动码云的pages功能，如图：访问链接即进入你的博客：至此，专属你的博客搭建成功了，你的专属域名：https://yourusername.oschina.io 。希望本文能给你带来帮助，如有疑惑欢迎联系我！ 希望本文能给你带来帮助，如有疑惑欢迎联系我！关于使用hexo+GitHub搭建静态博客，网上有很多文章，大家自行百度，结合本文基本能够搭建成功。关于C语言的学习请参考 https://yuanfangdetianye.oschina.io]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[建立自己的专属博客]]></title>
+      <url>%2F2017%2F01%2F24%2F1%2F</url>
+      <content type="text"><![CDATA[费了许多周折终于把自己的博客建立起来了。为什么要建一个专属自己的博客？一显得高大上；二便于督促自己学习，有这么一个博客自己便会不断去充实自己的博客，也就会不断学习；三是作为自己在互联网世界的标签。 等整理好之后，我会把建立这个博客的方法步骤写出来，供大家参考。]]></content>
+    </entry>
+
+    
+  
+  
+</search>
