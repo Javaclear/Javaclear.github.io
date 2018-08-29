@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Python JSON模块的用法简单教程]]></title>
+      <url>%2F2018%2F08%2F29%2Fjson%2F</url>
+      <content type="text"><![CDATA[什么是 JSON ？ JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）。 JSON 是轻量级的文本数据交换格式。是用来存储和交换文本信息的语法。 JSON 语法语法规则JSON 语法是 JavaScript 对象表示语法的子集。 数据在名称/值对中 数据由逗号分隔 大括号保存对象 中括号保存数组 1234567&#123; "sites": [ &#123; "name":"随心而码" , "url":"linjianming.com" &#125;, &#123; "name":"清风云" , "url":"yun.silent-tech.cn" &#125;, &#123; "name":"本源空间" , "url":"originspace.cn" &#125; ]&#125; “name”:”随心而码” , “url”:”linjianming.com” 叫作JSON 对象，他们一般放在 {} 中。 “sites” 为JSON 数组，用 [] 表示。 Python中的json模块json，用于字符串 和 python数据类型间进行转换json模块提供了四个功能：dumps、dump、loads、load 用法 json.dumps 将 Python 对象编码成 JSON 数据 json.dump 将 JSON 数据通过特殊的形式转换为只有 Python 认识的字符串并写入文件 json.loads 将已编码的 JSON 数据解码为 Python 对象 json.load 将一个包含 JSON 格式数据的可读文件解码为一个 Python 对象并写入文件 import json date = { "sites": [ { "name":"随心而码" , "url":"linjianming.com" }, { "name":"清风云" , "url":"yun.silent-tech.cn" }, { "name":"本源空间" , "url":"originspace.cn" } ] } str1 = json.dumps(date) # json.dumps 将数据通过特殊形式转换为所有程序语言都认识的字符串 print(str1) with open('result.json','w') as fp: #json.dump 将数据通过特殊的形式转换为只有python认识的字符串并写入文件 json.dump(date,fp) 在此提醒：命名你的Python文件时，千万不要使用和Python保留的标识符冲突。如，不可将你的文件命名为 json.py ，这与Python系统模块 json 命名冲突。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[hexo博客使用系列（六）——将博客部署到codingpages]]></title>
       <url>%2F2017%2F02%2F05%2Fhexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E5%85%AD%EF%BC%89%E2%80%94%E2%80%94%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0codingpages%2F</url>
       <content type="text"><![CDATA[step 1注册coding账户。进入自己的账户–&gt;项目，如下图操作，创建项目。 step 2在Coding的个人主页的账户中，进入SSH公钥。添加你的公钥，如果你之前生成过，公钥在C:\Users\你的用户名.ssh\id_rsa.pub。复制里面的内容在SSH-RSA公钥内容中即可。如下图操作。在网站根目录下打开git bash here，输入 1ssh -T git@git.coding.net 进行测试，如果显示如下则SSH配置成功： 1Hello ...! You&apos;ve conected to Coding.net by SSH successfully! step3修改网站根目录下的配置文件_config.yml，找到deploy的设置处，改为如下： deploy: type: git repo: github: https://github.com/Javaclear/Javaclear.github.io.git coding: https://git.coding.net/yanhuangshi/yanhuangshi.git branch: master #注意要改成你的项目地址。 step4在git bash here窗口输入下列代码： hexo g -d step5进入自己的项目，选择pages服务，开启服务。如下图操作。 至此，成功部署到coding上，再也不用担心GitHub被墙导致网站无法访问的问题。该方法和将博客直接部署到码云page有异曲同工之妙。 本文参考：http://www.jeyzhang.com/blog-on-gitcafe-with-dns-settings.html]]></content>
