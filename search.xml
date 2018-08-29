@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[Python JSON模块的用法简单教程]]></title>
+      <title><![CDATA[Python JSON模块的用法简单剖析]]></title>
       <url>%2F2018%2F08%2F29%2Fjson%2F</url>
       <content type="text"><![CDATA[什么是 JSON ？ JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）。 JSON 是轻量级的文本数据交换格式。是用来存储和交换文本信息的语法。 JSON 语法语法规则JSON 语法是 JavaScript 对象表示语法的子集。 数据在名称/值对中 数据由逗号分隔 大括号保存对象 中括号保存数组 1234567&#123; "sites": [ &#123; "name":"随心而码" , "url":"linjianming.com" &#125;, &#123; "name":"清风云" , "url":"yun.silent-tech.cn" &#125;, &#123; "name":"本源空间" , "url":"originspace.cn" &#125; ]&#125; “name”:”随心而码” , “url”:”linjianming.com” 叫作JSON 对象，他们一般放在 {} 中。 “sites” 为JSON 数组，用 [] 表示。 Python中的json模块json，用于字符串 和 python数据类型间进行转换json模块提供了四个功能：dumps、dump、loads、load 用法 json.dumps 将 Python 对象编码成 JSON 数据 json.dump 将 JSON 数据通过特殊的形式转换为只有 Python 认识的字符串并写入文件 json.loads 将已编码的 JSON 数据解码为 Python 对象 json.load 将一个包含 JSON 格式数据的可读文件解码为一个 Python 对象并写入文件 import json date = { "sites": [ { "name":"随心而码" , "url":"linjianming.com" }, { "name":"清风云" , "url":"yun.silent-tech.cn" }, { "name":"本源空间" , "url":"originspace.cn" } ] } str1 = json.dumps(date) # json.dumps 将数据通过特殊形式转换为所有程序语言都认识的字符串 print(str1) with open('result.json','w') as fp: #json.dump 将数据通过特殊的形式转换为只有python认识的字符串并写入文件 json.dump(date,fp) 在此提醒：命名你的Python文件时，千万不要使用和Python保留的标识符冲突。如，不可将你的文件命名为 json.py ，这与Python系统模块 json 命名冲突。]]></content>
     </entry>
