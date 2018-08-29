@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://javaclear.github.io//404.html</loc>
+    
+    <lastmod>2018-08-29T23:51:23.109Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://javaclear.github.io/2018/08/29/json/</loc>
     
     <lastmod>2018-08-29T09:57:28.889Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://javaclear.github.io/2017/01/24/1/</loc>
     
     <lastmod>2017-02-09T03:27:32.184Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://javaclear.github.io//404.html</loc>
-    
-    <lastmod>2017-02-09T03:05:24.771Z</lastmod>
     
   </url>
   

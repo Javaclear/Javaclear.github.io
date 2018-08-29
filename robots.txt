@@ -10,6 +10,7 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
+Disallow: /libs/
 
-Sitemap: http://javaclear.github.io/sitemap.xml
-Sitemap: http://javaclear.github.io/baidusitemap.xml
+Sitemap: https://javaclear.github.io/sitemap.xml
+Sitemap: https://javaclear.github.io/baidusitemap.xml
