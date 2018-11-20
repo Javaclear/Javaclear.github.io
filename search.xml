@@ -31,20 +31,6 @@
 
     
     <entry>
-      <title><![CDATA[网页的“装修工”——CSS]]></title>
-      <url>%2F2018%2F09%2F01%2Fwangyedezhuangxiugongcss%2F</url>
-      <content type="text"><![CDATA[什么是CSS？CSS，即 Cascading Style Sheet 的首字母缩写，中文名叫层叠样式表。它与HTML一样，是一种描述性语言。 CSS有什么作用？CSS定义了如何显示HTML标签、如何控制网页对象的样式，如何进行页面排版。简单来讲，CSS使我们看到的网页显得更加美观、更加适合我们阅读。 如何使用CSS？ 1、内嵌样式 即将CSS代码写在&lt;head&gt;&lt;/head&gt;之间，通过HTML的&lt;style&gt;标签括起来。使用方法如下： 我是标题 p { text-align = center; font-size = 18px; line-height = 20px; } 2、行内样式 即将CSS代码直接写在HTML标签中，一般放在标签的style属性里。使用方法如下： 我是块级元素，控制一大块区域。 我是行内元素，控制段落。 3、外部样式 即将CSS代码写在一个以 .css 为后缀的文件中，通过HTML的&lt;link&gt;标签，将该CSS文件链接到HTML文档中。这是最实用、最常用的方式。这种方式实现了结构层和表示层的彻底分离，有助于维护网页。使用方法如下： 一个实例——简单的404页面&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;页面开小差啦&lt;/title&gt; &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;./images/favicon.ico&quot;&gt; &lt;style&gt; *{margin: 0;padding: 0;border: 0;} body{margin: 0 auto;} .logo{margin: 0 auto;padding: 0;border: 0; width: 500px;margin-top: 80px; height: 120px;} img{margin: 0;padding: 0;border: 0;float: left; width: 120px;} .logo p{margin: 0;padding: 0;border: 0;margin-left: 20px;margin-right: 0; float:right;width: 360px;font-size: 2em;line-height: 120px;} .main{margin-top: 80px;margin-left:auto;margin-right: auto;width: 500px; text-align: center;line-height: 2em;} .main p a{text-decoration: none;color: #ffae00;font-size: 1.25em;font-weight: 700;background-color: black;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;logo&quot;&gt;&lt;img src=&quot;images/logo_s.png&quot; alt=&quot;ORIGINSPACE|本源空间&quot;&gt;&lt;p&gt;ORIGIN&lt;span style=&quot;color: #ffae00;&quot;&gt;SPACE&lt;/span&gt;|本源空间&lt;/p&gt;&lt;/div&gt; &lt;div class=&quot;main&quot;&gt; &lt;p style=&quot;color: orange;font-size: 1.85em;font-weight: 700;&quot;&gt;提醒：&lt;/p&gt; &lt;p style=&quot;color: white;font-size: 1.025em;background-color: black;&quot;&gt;啊哈！页面找不到啦，看看是不是网址输错啦！&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://originspace.cn/&quot;&gt;点击这里重新回到小站首页&lt;/a&gt;&lt;/p&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; 其在浏览器中显示如下：]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[网页的”骨架“——HTML]]></title>
-      <url>%2F2018%2F08%2F31%2Fwangyedegujiahtml%2F</url>
-      <content type="text"><![CDATA[网页的构成一个网页简单来讲，由三部分组成。 HTML——组织网页的结构 CSS——对网页结构进行装修美化 JavaScript——增强网页的交互性，实现数据的实时更新等 所谓交互，即人与一个网页的交流过程。可能是点击某个按钮，可能是注册、登录、修改密码，也可能是网页聊天，等等。 HTMLHTML，英文全称 Hyper Text Markup Language，超文本标记语言。 一个HTML文件（称之为HTML文档）主要包含HTML元素及其属性。这里我们探讨的是HTML5（目前最新的HTML标准）。 HTML5文档基本结构&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;我是一个html页面&lt;/title&gt; &lt;/head&gt; &lt;body&gt; 我是主体，你们在浏览器上看到的内容都放在我这里。 &lt;/body&gt; &lt;/html&gt; ​ &lt;!DOCTYPE html&gt; 文档类型声明，声明这是html5文档，这一方面告诉开发者要使用html5语法规范进行开发，一方面告诉浏览器使用html5规范解析展示页面给人们看。 &lt;html&gt; ··· &lt;/html&gt; 主骨架，其他骨架都在这里面搭。 &lt;head&gt; ··· &lt;/head&gt; &lt;body&gt; ··· &lt;/body&gt; 两个分骨架。head分骨架包含元数据，主要给浏览器看。body骨架包含我们在浏览器上看到的内容。 HTML元素html文档中的内容，开发人员一般称之为元素。 我们说，除了文档类型声明，其他所有的元素都需要包含在html标签里。 什么是标签？&lt;html&gt;&lt;/html&gt; &lt;head&gt;&lt;/head&gt; &lt;body&gt;&lt;/body&gt; ​ 如上，用一对尖括号 &lt;\&gt; 括起来的称之为标签。 元素 = 标签+标签里包含的内容。如下： &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt; 我是HTML文档的主体，你们在网页上看到的内容，都放在我这里。 &lt;/body&gt; &lt;/html&gt; html元素由和其里面的内容组成。 常用标签&lt;div&gt;&lt;/div&gt; &lt;span&gt;&lt;/span&gt; &lt;p&gt;&lt;/p&gt; &lt;a href=&quot;&quot;&gt;&lt;/a&gt; &lt;ul&gt;&lt;/ul&gt; &lt;li&gt;&lt;/li&gt; &lt;h1&gt;&lt;/h1&gt; &lt;h2&gt;&lt;/h2&gt; &lt;h3&gt;&lt;/h3&gt; &lt;h4&gt;&lt;/h4&gt; &lt;h5&gt;&lt;/h5&gt; &lt;h6&gt;&lt;/h6&gt; &lt;hr&gt; &lt;br&gt; ​ 元素的属性元素的属性用来定义元素的类型、功能、方法等。 大部分元素拥有的属性（核心属性）： class——定义类规则 id——定义元素的唯一标识 style——定义元素的样式声明 以上三个属性一般是在CSS和JS中用到。 其他还有语言属性、键盘属性、内容属性、表单属性等。 一个简单的HTML5页面示例&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;我是一个html页面&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; &lt;h3&gt;我是3号标题&lt;/h3&gt; &lt;p&gt;我是一个段落，文本内容一般放在我这里面。&lt;br&gt; &lt;a href=&quot;https://linjianming.com/&quot;&gt;我是超链接，你可以点击我&lt;/a&gt;&lt;/p&gt; &lt;!-- &lt;br&gt;是换行标签 --&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; ​ ​]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[Python JSON模块的用法简单剖析]]></title>
       <url>%2F2018%2F08%2F29%2Fjson%2F</url>
       <content type="text"><![CDATA[什么是 JSON ？ JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）。 JSON 是轻量级的文本数据交换格式。是用来存储和交换文本信息的语法。 JSON 语法语法规则JSON 语法是 JavaScript 对象表示语法的子集。 数据在名称/值对中 数据由逗号分隔 大括号保存对象 中括号保存数组 1234567&#123; "sites": [ &#123; "name":"随心而码" , "url":"linjianming.com" &#125;, &#123; "name":"清风云" , "url":"yun.silent-tech.cn" &#125;, &#123; "name":"本源空间" , "url":"originspace.cn" &#125; ]&#125; “name”:”随心而码” , “url”:”linjianming.com” 叫作JSON 对象，他们一般放在 {} 中。 “sites” 为JSON 数组，用 [] 表示。 Python中的json模块json，用于字符串 和 python数据类型间进行转换json模块提供了四个功能：dumps、dump、loads、load 用法 json.dumps 将 Python 对象编码成 JSON 数据 json.dump 将 JSON 数据通过特殊的形式转换为只有 Python 认识的字符串并写入文件 json.loads 将已编码的 JSON 数据解码为 Python 对象 json.load 将一个包含 JSON 格式数据的可读文件解码为一个 Python 对象并写入文件 import json date = { "sites": [ { "name":"随心而码" , "url":"linjianming.com" }, { "name":"清风云" , "url":"yun.silent-tech.cn" }, { "name":"本源空间" , "url":"originspace.cn" } ] } str1 = json.dumps(date) # json.dumps 将数据通过特殊形式转换为所有程序语言都认识的字符串 print(str1) with open('result.json','w') as fp: #json.dump 将数据通过特殊的形式转换为只有python认识的字符串并写入文件 json.dump(date,fp) 在此提醒：命名你的Python文件时，千万不要使用和Python保留的标识符冲突。如，不可将你的文件命名为 json.py ，这与Python系统模块 json 命名冲突。]]></content>
@@ -409,20 +395,6 @@
 
     
     <entry>
-      <title><![CDATA[Hexo博客使用系列（三）——更换博客主题]]></title>
-      <url>%2F2017%2F01%2F27%2Fhexobokeshiyongxiliesangenghuanbokezhuti%2F</url>
-      <content type="text"><![CDATA[获取主题1、选择自己喜欢的主题 进入Hexo官网 https://hexo.io/themes/ 选择： 2、点击主题名进行下载 3、将下载好的主题解压到 D:\Blog\themes 。 配置主题1、打开 D:\Blog_config.yml ,修改theme 为刚刚解压的主题文件夹名称。注意：theme: 后有一个英文空格。 2、在\Blog下运行Git Bash Here命令窗口，执行下面代码： hexo generate hexo deploy OK！主题更换成功啦！赶紧进入自己的网站看看效果吧。]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hexo博客使用系列（二）——常用命令]]></title>
-      <url>%2F2017%2F01%2F26%2F136%2F</url>
-      <content type="text"><![CDATA[注意： 以下指令理论上可以在电脑自带cmd窗口执行，但可能会出错，最好在 Git Bash Here 窗口执行。使用过程中遇到任何问题欢迎留言和我交流。当然，个人建议大家有问题先上网查找答案，一般可以找到。 一、新建一个网站$ hexo init [folder] folder：指你新建网站在你电脑上存放的文件夹，默认在目前的文件夹建立网站。 二、新建一篇文章$ hexo new [layout] &lt;title&gt; layout：布局，可以不设置，默认使用 _config.yml 中的 default_layout 参数代替。注意：如果标题包含空格，请用引号括起来。 新建的文章存放在你的网站文件夹根目录下的/source/_posts里面。 三、生成静态文件$ hexo generate #可以简写为 hexo g 四、启动服务$ hexo server 启动服务器后，默认访问 http://localhost:4000/ 进行网站预览。 可通过 hexo new port 重设端口，将:4000改为其他值，如5885等。 五、部署网站$ hexo deploy #可简写为 hexo d ;也可以与 generate连用，合写为 hexo g -d 六、其他指令1、渲染文件$ hexo render &lt;file1&gt; [file2] ... 2、从其他博客系统迁移内容$ hexo migrate &lt;type&gt; 参考：hexo迁移内容 3、清除缓存文件 (db.json) 和已生成的静态文件 (public)$ hexo clean 4、列出网站资料$ hexo list &lt;type&gt; 5、显示 Hexo 版本$ hexo version 七、选项1、安全模式$ hexo --safe 安装新插件遇到问题时，可尝试以安全模式重新执行。 2、调试模式$ hexo --debug 3、简洁模式$ hexo silent 隐藏终端信息。 4、自定义配置文件路径$ hexo --config custom.yml #执行后将不再使用 _config.yml 5、显示 source/_drafts 文件夹中的草稿文章$ hexo --draft 6、自定义当前工作目录（Current working directory，CWD）的路径$ hexo --cwd /path/to/cwd 本文主要参考hexo命令]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[Hexo博客使用系列（一）——新建文章并发布]]></title>
       <url>%2F2017%2F01%2F25%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E5%B9%B6%E5%8F%91%E5%B8%83%2F</url>
       <content type="text"><![CDATA[* 新建文章的方法1、进入你的博客目录，在 /source/_posts 文件夹下直接建立一个.md文件。 2、进入你的博客目录，右键选择 Git Bash Here 进入命令窗口，输入下面代码:1hexo new "新建文章名称" #新建文章 此时，在方法1所述的文件夹里便有了 新建文章名称.md 文件。 * 发布新建文章在该博客项目文件夹下运行 Git Bash Here 命令窗口，依次输入如下代码：12hexo generate #生成更改hexo deploy #将生成的更改部署到码云或者GitHub上 ==注意== 1、部署到GitHub时，可能因为网速、被墙等原因，需要多次运行 hexo deploy ；有时候可以运行 hexo clean 后在运行上述代码。2、.md文件不要用记事本打开，建议使用具有markdown语法的程序打开，比如：subline text、notepad++等。也可以使用在线markdown编辑器，比如：==小书匠== 其他问题欢迎在评论区留言！]]></content>
@@ -433,20 +405,6 @@
       <title><![CDATA[Hexo博客使用教程（引子）————如何优化]]></title>
       <url>%2F2017%2F01%2F25%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%B3%BB%E5%88%97%EF%BC%88%E5%BC%95%E5%AD%90%EF%BC%89%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%2F</url>
       <content type="text"><![CDATA[==**优化文章==1、使用markdown编辑器编写文章时，使用markdown语法优化。自行百度markdown语法。2、修改网站根目录下scaffolds（模版）的文件，可编辑选项：layout（布局），title（标题），date（文件建立日期）。 ==**优化主题====*== 网站增加插件1、增加访问量统计2、增加站内搜索3、增加打赏功能4、添加返回顶部功能 ==*== 局部缓存如果您的主题太过于复杂，或是需要生成的文件量太过于庞大，可能会大幅降低性能，除了简化主题外，您可以考虑 Hexo 2.7 新增的局部缓存（Fragment Caching） 功能。 本功能借鉴于 Ruby on Rails，它储存局部内容，下次便能直接使用缓存内容，可以减少文件夹查询并使生成速度更快。 它可用于页首、页脚、侧边栏等文件不常变动的位置，举例来说：123&lt;%- fragment_cache('header', function()&#123; return '&lt;header&gt;&lt;/header&gt;';&#125;); 如果您使用局部模板的话，可以更简单：1&lt;%- partial('header', &#123;&#125;, &#123;cache: true&#125;); 但是，如果您开启了 relative_link 参数的话，请勿使用局部缓存功能，因为相对链接在每个页面可能不同。 具体优化教程随后奉上！]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hexo博客使用系列（一）——新建文章并发布]]></title>
-      <url>%2F2017%2F01%2F25%2Fhexobokeshiyongxilieyixinjianwenzhangbingfabu%2F</url>
-      <content type="text"><![CDATA[新建文章的方法1、进入你的博客目录，在 /source/_posts 文件夹下直接建立一个.md文件。2、进入你的博客目录，右键选择 Git Bash Here 进入命令窗口，输入下面代码:hexo new &quot;新建文章名称&quot; 此时，在方法1所述的文件夹里便有了 新建文章名称.md 文件。 发布新建文章在该博客项目文件夹下运行 Git Bash Here 命令窗口，依次输入如下代码： hexo generate hexo deploy 注意： 1、部署到GitHub时，可能因为网速、被墙等原因，需要多次运行 hexo deploy ；有时候可以运行 hexo clean 后在运行上述代码。2、.md文件不要用记事本打开，建议使用具有markdown语法的程序打开，比如：subline text、notepad++等。也可以使用在线markdown编辑器，比如：小书匠其他问题欢迎在评论区留言！]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hexo博客使用教程（引子）———如何优化]]></title>
-      <url>%2F2017%2F01%2F25%2Fhexobokeshiyongjiaochengyinziruheyouhua%2F</url>
-      <content type="text"><![CDATA[优化文章1、使用markdown编辑器编写文章时，使用markdown语法优化。自行百度markdown语法。 2、修改网站根目录下scaffolds（模版）的文件，可编辑选项：layout（布局），title（标题），date（文件建立日期）。 优化主题网站增加插件： 增加访问量统计 增加站内搜索 增加打赏功能 添加返回顶部功能 局部缓存：如果您的主题太过于复杂，或是需要生成的文件量太过于庞大，可能会大幅降低性能，除了简化主题外，您可以考虑 Hexo 2.7 新增的局部缓存（Fragment Caching） 功能。 本功能借鉴于 Ruby on Rails，它储存局部内容，下次便能直接使用缓存内容，可以减少文件夹查询并使生成速度更快。 它可用于页首、页脚、侧边栏等文件不常变动的位置，举例来说： &lt;%- fragment_cache(&apos;header&apos;, function(){ return &apos;&lt;header&gt;&lt;/header&gt;&apos;; }); 如果您使用局部模板的话，可以更简单： &lt;%- partial(&apos;header&apos;, {}, {cache: true}); 但是，如果您开启了 relative_link 参数的话，请勿使用局部缓存功能，因为相对链接在每个页面可能不同。 具体优化教程随后奉上！]]></content>
     </entry>
 
     
@@ -467,7 +425,7 @@
     <entry>
       <title><![CDATA[建立自己的专属博客]]></title>
       <url>%2F2017%2F01%2F24%2F1%2F</url>
-      <content type="text"><![CDATA[费了许多周折终于把自己的博客建立起来了。为什么要建一个专属自己的博客？一显得高大上；二便于督促自己学习，有这么一个博客自己便会不断去充实自己的博客，也就会不断学习；三是作为自己在互联网世界的标签。 等整理好之后，我会把建立这个博客的方法步骤写出来，供大家参考。]]></content>
+      <content type="text"><![CDATA[费了许多周折终于把自己的博客建立起来了。为什么要建一个专属自己的博客？督促自己学习，记录学习经历、想法等。]]></content>
     </entry>
 
     
