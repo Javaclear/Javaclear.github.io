@@ -113,7 +113,7 @@
     motion: true,
     duoshuo: {
       userId: 'undefined',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            Startseite
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            Archiv
           </a>
         </li>
       
@@ -223,7 +223,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -246,7 +246,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            搜索
+            Suche
           </a>
         </li>
       
@@ -309,7 +309,7 @@
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Jack Lin">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://okbrg0sur.bkt.clouddn.com/super-mario-2003942_1920.jpg">
+    <meta itemprop="image" content="http://static.silent-tech.cn/super-mario-2003942_1920.jpg">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -341,7 +341,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-04T15:26:24+08:00">
                 2017-02-04
@@ -357,9 +357,9 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">Updated at</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-01-26T10:51:09+08:00">
+              <time title="Updated at" itemprop="dateModified" datetime="2017-01-26T10:51:09+08:00">
                 2017-01-26
               </time>
             
@@ -394,18 +394,18 @@
         <p><strong><em>==注意：==</em></strong> <strong>以下指令理论上可以在电脑自带cmd窗口执行，但可能会出错，最好在 Git Bash Here 窗口执行。使用过程中遇到任何问题欢迎留言和我交流。当然，个人建议大家有问题先上网查找答案，一般可以找到。</strong></p>
 <h2 id="一、新建一个网站"><a href="#一、新建一个网站" class="headerlink" title="一、新建一个网站"></a><strong>一、新建一个网站</strong></h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init [folder]</div></pre></td></tr></table></figure>
 <p>==folder==指你新建网站在你电脑上存放的文件夹，默认在目前的文件夹建立网站。<br><a id="more"></a></p>
-<h2 id="二、新建一篇文章"><a href="#二、新建一篇文章" class="headerlink" title="二、新建一篇文章"></a><strong>二、新建一篇文章</strong></h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
+<h2 id="二、新建一篇文章"><a href="#二、新建一篇文章" class="headerlink" title="二、新建一篇文章"></a><strong>二、新建一篇文章</strong></h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] <span class="xml"><span class="tag">&lt;<span class="name">title</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>layout：布局，可以不设置，默认使用 _config.yml   中的 ==default<em>layout==参数代替。注意：如果标题包含空格，请用引号括起来。
 </em>==新建的文章存放在你的网站文件夹根目录下的/source/<em>posts里面。==</em></p>
 <h2 id="三、生成静态文件"><a href="#三、生成静态文件" class="headerlink" title="三、生成静态文件"></a><strong>三、生成静态文件</strong></h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate			#可以简写为 hexo g</div></pre></td></tr></table></figure>
 <h2 id="四、启动服务"><a href="#四、启动服务" class="headerlink" title="四、启动服务"></a><strong>四、启动服务</strong></h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>启动服务器后，默认访问 ==<a href="http://localhost:4000/==" target="_blank" rel="external">http://localhost:4000/==</a> 进行网站预览。<br><em>==可通过 hexo new port 重设端口，将:4000改为其他值，如5885等。==</em></p>
 <h2 id="五、部署网站"><a href="#五、部署网站" class="headerlink" title="五、部署网站"></a><strong>五、部署网站</strong></h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy			#可简写为 hexo d ;也可以与 generate连用，合写为 hexo g -d</div></pre></td></tr></table></figure>
-<h2 id="六、其他指令"><a href="#六、其他指令" class="headerlink" title="六、其他指令"></a><strong>六、其他指令</strong></h2><h3 id="1、渲染文件"><a href="#1、渲染文件" class="headerlink" title="1、渲染文件"></a>1、渲染文件</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo render &lt;file1&gt; [file2] ...</div></pre></td></tr></table></figure>
-<h3 id="2、从其他博客系统迁移内容"><a href="#2、从其他博客系统迁移内容" class="headerlink" title="2、从其他博客系统迁移内容"></a>2、从其他博客系统迁移内容</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo migrate &lt;type&gt;</div></pre></td></tr></table></figure>
+<h2 id="六、其他指令"><a href="#六、其他指令" class="headerlink" title="六、其他指令"></a><strong>六、其他指令</strong></h2><h3 id="1、渲染文件"><a href="#1、渲染文件" class="headerlink" title="1、渲染文件"></a>1、渲染文件</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo render <span class="xml"><span class="tag">&lt;<span class="name">file1</span>&gt;</span></span> [file2] ...</div></pre></td></tr></table></figure>
+<h3 id="2、从其他博客系统迁移内容"><a href="#2、从其他博客系统迁移内容" class="headerlink" title="2、从其他博客系统迁移内容"></a>2、从其他博客系统迁移内容</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo migrate <span class="xml"><span class="tag">&lt;<span class="name">type</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>参考：<a href="https://hexo.io/zh-cn/docs/migration.html" target="_blank" rel="external">hexo迁移内容</a></p>
 <h3 id="3、清除缓存文件-db-json-和已生成的静态文件-public"><a href="#3、清除缓存文件-db-json-和已生成的静态文件-public" class="headerlink" title="3、清除缓存文件 (db.json) 和已生成的静态文件 (public)"></a>3、清除缓存文件 (db.json) 和已生成的静态文件 (public)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div></pre></td></tr></table></figure>
-<h3 id="4、列出网站资料"><a href="#4、列出网站资料" class="headerlink" title="4、列出网站资料"></a>4、列出网站资料</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo list &lt;type&gt;</div></pre></td></tr></table></figure>
+<h3 id="4、列出网站资料"><a href="#4、列出网站资料" class="headerlink" title="4、列出网站资料"></a>4、列出网站资料</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo list <span class="xml"><span class="tag">&lt;<span class="name">type</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <h3 id="5、显示-Hexo-版本"><a href="#5、显示-Hexo-版本" class="headerlink" title="5、显示 Hexo 版本"></a>5、显示 Hexo 版本</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo version</div></pre></td></tr></table></figure>
 <h2 id="七、选项"><a href="#七、选项" class="headerlink" title="七、选项"></a>七、选项</h2><h3 id="1、安全模式"><a href="#1、安全模式" class="headerlink" title="1、安全模式"></a>1、安全模式</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo --safe</div></pre></td></tr></table></figure>
 <p>安装新插件遇到问题时，可尝试以安全模式重新执行。</p>
@@ -443,13 +443,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="http://okbrg0sur.bkt.clouddn.com/wechatpay.png" alt="Jack Lin WeChat Pay"/>
+          <img id="wechat_qr" src="http://static.silent-tech.cn/wepay.JPG" alt="Jack Lin WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="http://okbrg0sur.bkt.clouddn.com/alipay.png" alt="Jack Lin Alipay"/>
+          <img id="alipay_qr" src="http://static.silent-tech.cn/alipay.jpg" alt="Jack Lin Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -535,10 +535,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+            Übersicht
           </li>
         </ul>
       
@@ -546,7 +546,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://okbrg0sur.bkt.clouddn.com/super-mario-2003942_1920.jpg"
+               src="http://static.silent-tech.cn/super-mario-2003942_1920.jpg"
                alt="Jack Lin" />
           <p class="site-author-name" itemprop="name">Jack Lin</p>
           <p class="site-description motion-element" itemprop="description">愿得一佳偶，相伴诗意人生。</p>
@@ -556,26 +556,19 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">61</span>
-                <span class="site-state-item-name">日志</span>
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
 
           
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">分类</span>
-              
-            </div>
-          
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -686,11 +679,11 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
